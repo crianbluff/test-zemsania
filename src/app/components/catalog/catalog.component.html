@@ -1,0 +1,19 @@
+<app-navbar 
+  title="Catalogs"
+  [pageIndex]="pageIndex"
+  [totalCatalog]="totalCatalog"
+  [pageSize]="pageSize"
+  (capturePage)="pageEvent($event)"
+>
+</app-navbar>
+
+<app-data-table
+  [loading]="loading"
+  [error]="error"
+  [dataSource]="catalogs"
+  [showViewColumns]="true"
+  [displayedColumns]="displayedColumns"
+  (captureClickEdit)="editCatalog($event)"
+  (captureClickDelete)="deleteCatalog($event)"
+>
+</app-data-table>

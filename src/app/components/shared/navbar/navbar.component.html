@@ -1,0 +1,16 @@
+<mat-toolbar class="toolbar-stl">
+  <span class="toolbar-title">
+    {{ title }}
+  </span>
+
+  <span class="fill-remaining-space"></span>
+
+  <mat-paginator
+    showFirstLastButtons
+    [length]="totalCatalog"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+    (page)="pageEvent($event)"
+  >
+  </mat-paginator>
+</mat-toolbar>
