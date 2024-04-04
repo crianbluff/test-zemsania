@@ -1,11 +1,11 @@
 <div class="container">
-  <h3 mat-dialog-title>Catalog: {{data.title}}</h3>
+  <h3 mat-dialog-title>Catalog: {{data.title?._value}}</h3>
 
   <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
 
     <div class="form">
       <mat-form-field color="accent">
-        <input matInput #input class="form-control" placeholder="Title" [(ngModel)]="data.title" name="title" required>
+        <input matInput #input class="form-control" placeholder="Title" [(ngModel)]="data.title[0]._value" name="title" required>
         <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
     </div>

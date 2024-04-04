@@ -13,27 +13,30 @@ export class EditCatalogDialogComponent {
   constructor(public dialogRef: MatDialogRef<EditCatalogDialogComponent>,
   @Inject(MAT_DIALOG_DATA) public data: any, public _apiCatalog: ApiCatalogService) {}
 
+  
+  
   formControl = new FormControl('', [
-  Validators.required
-  // Validators.email,
+    Validators.required
+    // Validators.email,
   ]);
-
+  
   getErrorMessage() {
     return this.formControl.hasError('required') ? 'Required field' :
     this.formControl.hasError('email') ? 'Not a valid email' :
     '';
   }
-
+  
   submit() {
-  // emppty stuff
+    // emppty stuff
   }
-
+  
   onNoClick(): void {
+    console.log(this.data);
     this.dialogRef.close();
   }
-
+  
   stopEdit(): void {
     this._apiCatalog.updateIssue(this.data);
   }
-
+  
 }
